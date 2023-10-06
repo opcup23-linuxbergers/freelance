@@ -1,0 +1,17 @@
+@import "colours";
+
+@mixin define-icon($name, $bg, $width: 22px, $height: 22px, $mp: center, $mr: 5px) {
+  .icon-#{$name} {
+    display: inline-block; //растягивает на всю ширину
+    width: $width;
+    height: $height;
+    margin: $mr;
+    background: $bg;
+    -webkit-mask-image: url("@/assets/imgs/#{$name}.svg");
+    mask-image: url("@/assets/imgs/#{$name}.svg");
+    mask-repeat: no-repeat;
+    mask-position: $mp;
+    mask-size: contain;
+    cursor: pointer;
+  }
+}

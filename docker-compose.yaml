@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+  client:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "23000:3000"
+  database:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=fl
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    volumes:
+      - fl-db:/var/lib/postgresql/data
+    networks:
+      - fl
+  server:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    depends_on:
+      - database
+    networks:
+      - fl
+    ports:
+      - "23001:18000"
+    volumes:
+      - fl-data:/app/data
+      - ./config.json:/app/config.json
+volumes:
+  fl-db:
+  fl-data:
+networks:
+  fl:
+    driver: bridge

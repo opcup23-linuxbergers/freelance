@@ -1,0 +1,14 @@
+{
+	"db": {
+		"type":     "postgres",
+		"user":     "admin",
+		"password": "admin",
+		"name":     "fl",
+		"host":     "postgres"
+	},
+	"server": {
+		"port": "18000",
+		"secret": "jUDS743Dfjdf8ad",
+		"dev_mode": true
+	}
+}

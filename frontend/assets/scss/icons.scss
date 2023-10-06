@@ -1,0 +1,10 @@
+@import "mixins";
+
+@include define-icon(case, #FFF, 30px, 30px);
+@include define-icon(bell, #FFF, 30px, 30px);
+@include define-icon(profile, #FFF, 30px, 30px);
+@include define-icon(eye, #616161, 30px, 30px);
+@include define-icon(rating, #616161, 30px, 30px);
+@include define-icon(close, #616161, 15px, 15px, center, none);
+@include define-icon(offer, #616161, 15px, 15px, center);
+@include define-icon(marked, #616161, 15px, 15px, center, none);
